@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+cd $(dirname "${BASH_SOURCE[0]}")
+
+if [[ "$CC" == "" ]]; then
+    CC=cc
+fi
+
+if [[ "$CXX" == "" ]]; then
+    CXX=c++
+fi
+
+if [[ "$G" == "" ]]; then
+    export G=5
+fi
+
+echo "tidwall/rtree.h"
+$CC -O3 $CFLAGS bench.c -lm
+./a.out
+
+echo
