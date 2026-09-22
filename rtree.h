@@ -9,21 +9,6 @@
 // For a complete list of options visit:
 // https://github.com/tidwall/rtree.h#options
 
-/*
-RTREE_NAME namespace
-RTREE_TYPE item type
-RTREE_FLOAT16             // use float16 internally (arm64 only)
-RTREE_FLOAT32             // use float32 internally
-RTREE_COMPARE
-RTREE_MALLOC
-RTREE_FREE
-RTREE_COW
-RTREE_ITEMCOPY
-RTREE_ITEMFREE
-RTREE_ITEMRECT            // changes insert/delete/search signatures
-*/
-
-
 // The API namespace. 
 // This is the prefix for all functions calls, and is also and the name of the
 // root node structure.
@@ -1331,9 +1316,10 @@ bool RTREE_API(feat_atomics)(void) {
 
 #endif // !RTREE_HEADER
 
-
 // undefine everything
-// use `gcc -dM -E <source>` to help find leftover RTREE_* defines
+// use `grep -oE '[a-z_A-Z]+' rtree.h | sort -u | grep RTREE_` to help find
+// leftover RTREE_* defines
+#undef RTREE_
 #undef RTREE_API
 #undef RTREE_ASSERT
 #undef RTREE_BRANCH_SIZE
@@ -1350,7 +1336,9 @@ bool RTREE_API(feat_atomics)(void) {
 #undef RTREE_FANOUTUSED
 #undef RTREE_FINISHED
 #undef RTREE_FLOAT
+#undef RTREE_FOUND
 #undef RTREE_FREE
+#undef RTREE_HEADER
 #undef RTREE_INLINE
 #undef RTREE_INSERTED
 #undef RTREE_ITEM
@@ -1363,14 +1351,19 @@ bool RTREE_API(feat_atomics)(void) {
 #undef RTREE_MAXITEMS
 #undef RTREE_MINITEMS
 #undef RTREE_NAME
+#undef RTREE_NOATOMICS
 #undef RTREE_NODE
 #undef RTREE_NODE_SIZE
 #undef RTREE_NOINLINE
+#undef RTREE_NOITEMRECT
 #undef RTREE_NOMEM
 #undef RTREE_NOTFOUND
+#undef RTREE_OUTOFORDER
 #undef RTREE_PROC_ITER
 #undef RTREE_RECT
+#undef RTREE_REPLACED
 #undef RTREE_SNODE
+#undef RTREE_SOURCE
 #undef RTREE_SPLIT
 #undef RTREE_STOPPED
 #undef RTREE_SYM
