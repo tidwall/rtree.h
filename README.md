@@ -6,7 +6,7 @@ in-memory rtree collections.
 
 <img src="tests/cities.png" border="0" alt="Cities">
 
-_This is a happy companion to the [btree.h](https://github.com/tidwall/btree.h) generator library._
+_This is a companion to [btree.h](https://github.com/tidwall/btree.h)._
 
 ## Features
 
