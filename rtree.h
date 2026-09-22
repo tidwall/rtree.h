@@ -1195,6 +1195,7 @@ static inline void RTREE_SYM(all_sym_calls)(void) {
     (void)RTREE_SYM(item_free);
     (void)RTREE_SYM(node_copy);
     (void)RTREE_SYM(shared);
+    (void)RTREE_SYM(fill_rect_item);
 }
 
 static inline void RTREE_SYM(all_api_calls)(void) {
